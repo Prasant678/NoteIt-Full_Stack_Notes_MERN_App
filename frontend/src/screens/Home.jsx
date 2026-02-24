@@ -1,5 +1,5 @@
 import React from 'react'
-import AddNote from '../Components/AddNote'
+import AddNote from '../components/AddNote'
 import AllNotes from './AllNotes'
 
 const Home = () => {

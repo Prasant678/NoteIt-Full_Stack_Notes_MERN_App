@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NoteCard from "../components/NoteCard";
 import EditNoteModal from "../components/EditNoteModal";
-import ConfirmModal from "../Components/ConfirmModal";
+import ConfirmModal from "../components/ConfirmModal";
 import { useDispatch, useSelector } from "react-redux";
 import { getArchivedNotes, softDelete, toggleArchive } from "../redux/features/noteSlice";
 

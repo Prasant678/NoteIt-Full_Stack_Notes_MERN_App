@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import NoteCard from '../components/NoteCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDeletedNotes, permanentDelete, restoreNote } from '../redux/features/noteSlice';
-import ConfirmModal from '../Components/ConfirmModal';
+import ConfirmModal from '../components/ConfirmModal';
 
 const Deleted = () => {
   const dispatch = useDispatch();
