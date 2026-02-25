@@ -27,6 +27,7 @@ Backend:
 - MongoDB Atlas
 - Mongoose
 - JWT Authentication
+- Brevo Transactional Email API
 
 ## 🌍 Deployment
 
