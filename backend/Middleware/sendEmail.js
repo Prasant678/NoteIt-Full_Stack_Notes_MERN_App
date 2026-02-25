@@ -29,28 +29,33 @@
 
 // export default sendEmail
 
-import * as Brevo from "@getbrevo/brevo";
+import * as brevo from '@getbrevo/brevo';
 
 const sendEmail = async (to, subject, html) => {
     try {
-        const apiInstance = new Brevo.TransactionalEmailsApi();
+        const apiInstance = new brevo.TransactionalEmailsApi();
 
         apiInstance.setApiKey(
-            Brevo.TransactionalEmailsApiApiKeys.apiKey,
+            brevo.TransactionalEmailsApiApiKeys.apiKey,
             process.env.BREVO_API_KEY
         );
 
-        const sendSmtpEmail = {
-            sender: { email: "your_verified_email@gmail.com", name: "Note App" },
-            to: [{ email: to }],
-            subject: subject,
-            htmlContent: html,
+        const emailData = new brevo.SendSmtpEmail();
+
+        emailData.sender = {
+            email: "your_verified_email@gmail.com",
+            name: "Note App"
         };
 
-        await apiInstance.sendTransacEmail(sendSmtpEmail);
+        emailData.to = [{ email: to }];
+        emailData.subject = subject;
+        emailData.htmlContent = html;
+
+        await apiInstance.sendTransacEmail(emailData);
+
         console.log("Email sent successfully");
     } catch (error) {
-        console.error("Email error:", error);
+        console.error("Email error:", error.response?.body || error);
         throw error;
     }
 };
