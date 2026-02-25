@@ -13,7 +13,7 @@ const sendEmail = async (to, subject, html) => {
         })
 
         const mailOptions = {
-            from: `Note App <${process.env.EMAIL_USER}>`,
+            from: `Note App <${process.env.BREVO_USER}>`,
             to,
             subject,
             html
